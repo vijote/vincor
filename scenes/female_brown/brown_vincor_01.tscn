@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://0ygyotrdwwdd"]
+
+[ext_resource type="PackedScene" uid="uid://dnsjjd1yyyvne" path="res://scenes/vincor.tscn" id="1_cqam2"]
+[ext_resource type="Material" uid="uid://b0iapvnomj2k3" path="res://materials/female_brown.tres" id="2_4gvpu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3hqnc"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ebaf5"]
+material = ExtResource("2_4gvpu")
+
+[node name="BrownFemaleVincor01" instance=ExtResource("1_cqam2")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("CylinderShape3D_3hqnc")
+
+[node name="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("CylinderMesh_ebaf5")

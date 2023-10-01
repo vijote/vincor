@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd8jy3n23omxw"]
+
+[ext_resource type="PackedScene" uid="uid://dnsjjd1yyyvne" path="res://scenes/vincor.tscn" id="1_jsetf"]
+[ext_resource type="Material" uid="uid://d04hkagdd6nl8" path="res://materials/male_blue.tres" id="2_jb1fy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e55p6"]
+size = Vector3(0.8, 1.6, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p3qh6"]
+material = ExtResource("2_jb1fy")
+size = Vector3(0.8, 1.6, 0.8)
+
+[node name="YellowMaleVincor02" instance=ExtResource("1_jsetf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_e55p6")
+
+[node name="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("BoxMesh_p3qh6")

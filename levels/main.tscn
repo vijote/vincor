@@ -1,0 +1,120 @@
+[gd_scene load_steps=25 format=3 uid="uid://bljpj1bl6f4n0"]
+
+[ext_resource type="Script" path="res://levels/main.gd" id="1_aasec"]
+[ext_resource type="PackedScene" uid="uid://0ygyotrdwwdd" path="res://scenes/female_brown/brown_vincor_01.tscn" id="2_33sct"]
+[ext_resource type="PackedScene" uid="uid://dgwcf602vu6xj" path="res://scenes/female_brown/brown_vincor_02.tscn" id="3_nicsp"]
+[ext_resource type="PackedScene" uid="uid://cx2hbea1q5egb" path="res://scenes/female_brown/brown_vincor_03.tscn" id="4_5og27"]
+[ext_resource type="PackedScene" uid="uid://cqo7qtpmgj48" path="res://scenes/female_brown/brown_vincor_04.tscn" id="5_fawxn"]
+[ext_resource type="PackedScene" uid="uid://bsa76b2oxaq40" path="res://scenes/female_brown/brown_vincor_05.tscn" id="6_p4sr0"]
+[ext_resource type="PackedScene" uid="uid://1dg73oh86rl1" path="res://scenes/female_orange/orange_vincor_01.tscn" id="7_0o5aa"]
+[ext_resource type="PackedScene" uid="uid://dgoapehto83vj" path="res://scenes/female_orange/orange_vincor_02.tscn" id="8_ptph8"]
+[ext_resource type="PackedScene" uid="uid://df1f1sp2ovxhk" path="res://scenes/female_orange/orange_vincor_03.tscn" id="9_tk85w"]
+[ext_resource type="PackedScene" uid="uid://ch75toqaw7ilx" path="res://scenes/female_orange/orange_vincor_04.tscn" id="10_tbbwq"]
+[ext_resource type="PackedScene" uid="uid://c8a13xojhqvv" path="res://scenes/female_orange/orange_vincor_05.tscn" id="11_g2305"]
+[ext_resource type="PackedScene" uid="uid://cogjnpldfvlsb" path="res://scenes/male_yellow/yellow_male_vincor_01.tscn" id="12_mm2lf"]
+[ext_resource type="PackedScene" uid="uid://dd8jy3n23omxw" path="res://scenes/male_yellow/yellow_male_vincor_02.tscn" id="13_4lm51"]
+[ext_resource type="PackedScene" uid="uid://btk10m5kdbakc" path="res://scenes/male_yellow/yellow_male_vincor_03.tscn" id="14_lc1jb"]
+[ext_resource type="PackedScene" uid="uid://yba1bo4ytrfc" path="res://scenes/male_yellow/yellow_male_vincor_04.tscn" id="15_6d1ko"]
+[ext_resource type="PackedScene" uid="uid://dfxf2adv62w1n" path="res://scenes/male_yellow/yellow_male_vincor_05.tscn" id="16_hnv0p"]
+[ext_resource type="PackedScene" uid="uid://ca3dy8ny7371x" path="res://scenes/male_blue/blue_male_vincor_01.tscn" id="17_cjcti"]
+[ext_resource type="PackedScene" uid="uid://cxfhssggwds4t" path="res://scenes/male_blue/blue_male_vincor_02.tscn" id="18_xjkam"]
+[ext_resource type="PackedScene" uid="uid://b0ji2efbgaeea" path="res://scenes/male_blue/blue_male_vincor_03.tscn" id="19_wx70c"]
+[ext_resource type="PackedScene" uid="uid://bojqs4m58iwh1" path="res://scenes/male_blue/blue_male_vincor_04.tscn" id="20_ncnhp"]
+[ext_resource type="PackedScene" uid="uid://dxthlwqygekir" path="res://scenes/male_blue/blue_male_vincor_05.tscn" id="21_xv3ay"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i1iht"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fd6xj"]
+albedo_color = Color(0.886275, 0.839216, 0.498039, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pinb1"]
+material = SubResource("StandardMaterial3D_fd6xj")
+size = Vector3(10, 0.5, 10)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_aasec")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_i1iht")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_pinb1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.690421, -0.650769, 0.31594, 0.0257104, 0.458537, 0.888304, -0.72295, -0.605181, 0.333315, 4.042, 8.06918, 4.08923)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.25446, 0)
+
+[node name="Brown" type="Node3D" parent="."]
+
+[node name="BrownFemaleVincor01" parent="Brown" instance=ExtResource("2_33sct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12131, 1, -6)
+
+[node name="BrownFemaleVincor02" parent="Brown" instance=ExtResource("3_nicsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12131, 0.8, -6)
+
+[node name="BrownFemaleVincor03" parent="Brown" instance=ExtResource("4_5og27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.878694, 0.65, -6)
+
+[node name="BrownFemaleVincor04" parent="Brown" instance=ExtResource("5_fawxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77907, 0.5, -6)
+
+[node name="BrownFemaleVincor05" parent="Brown" instance=ExtResource("6_p4sr0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56518, 0.25, -6)
+
+[node name="Orange" type="Node3D" parent="."]
+
+[node name="OrangeFemaleVincor01" parent="Orange" instance=ExtResource("7_0o5aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 6)
+
+[node name="OrangeFemaleVincor02" parent="Orange" instance=ExtResource("8_ptph8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25584, 0.8, 6)
+
+[node name="OrangeFemaleVincor03" parent="Orange" instance=ExtResource("9_tk85w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.707615, 0.65, 6)
+
+[node name="OrangeFemaleVincor04" parent="Orange" instance=ExtResource("10_tbbwq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85381, 0.5, 6)
+
+[node name="OrangeFemaleVincor05" parent="Orange" instance=ExtResource("11_g2305")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.25, 6)
+
+[node name="Yellow" type="Node3D" parent="."]
+
+[node name="YellowMaleVincor01" parent="Yellow" instance=ExtResource("12_mm2lf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -3.04975)
+
+[node name="YellowMaleVincor02" parent="Yellow" instance=ExtResource("13_4lm51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.8, -1.04975)
+
+[node name="YellowMaleVincor03" parent="Yellow" instance=ExtResource("14_lc1jb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.65, 0.950254)
+
+[node name="YellowMaleVincor04" parent="Yellow" instance=ExtResource("15_6d1ko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, 2.69442)
+
+[node name="YellowMaleVincor05" parent="Yellow" instance=ExtResource("16_hnv0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.25, 4.32893)
+
+[node name="Blue" type="Node3D" parent="."]
+
+[node name="BlueMaleVincor01" parent="Blue" instance=ExtResource("17_cjcti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -4)
+
+[node name="BlueMaleVincor02" parent="Blue" instance=ExtResource("18_xjkam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.8, -1.81726)
+
+[node name="BlueMaleVincor03" parent="Blue" instance=ExtResource("19_wx70c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.65, 0)
+
+[node name="BlueMaleVincor04" parent="Blue" instance=ExtResource("20_ncnhp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, 1.37868)
+
+[node name="BlueMaleVincor05" parent="Blue" instance=ExtResource("21_xv3ay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.25, 3)
