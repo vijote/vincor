@@ -36,6 +36,7 @@ size = Vector3(10, 0.5, 10)
 script = ExtResource("1_aasec")
 
 [node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34841, 0)
 collision_layer = 2
 collision_mask = 0
 
